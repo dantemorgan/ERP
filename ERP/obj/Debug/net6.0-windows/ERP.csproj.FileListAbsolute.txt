@@ -1,0 +1,17 @@
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.csproj.AssemblyReference.cache
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.Forms.frmLogin.resources
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.csproj.GenerateResource.cache
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.AssemblyInfoInputs.cache
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.AssemblyInfo.cs
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.csproj.CoreCompileInputs.cache
+D:\ProjetosGit\ERP\ERP\bin\Debug\net6.0-windows\ERP.exe
+D:\ProjetosGit\ERP\ERP\bin\Debug\net6.0-windows\ERP.deps.json
+D:\ProjetosGit\ERP\ERP\bin\Debug\net6.0-windows\ERP.runtimeconfig.json
+D:\ProjetosGit\ERP\ERP\bin\Debug\net6.0-windows\ERP.dll
+D:\ProjetosGit\ERP\ERP\bin\Debug\net6.0-windows\ERP.pdb
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.dll
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\refint\ERP.dll
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.pdb
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.genruntimeconfig.cache
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ref\ERP.dll
