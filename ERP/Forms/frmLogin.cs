@@ -19,6 +19,7 @@ namespace ERP.Forms
 
         private void btnSair_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Obrigado!");
             Close();
         }
     }
