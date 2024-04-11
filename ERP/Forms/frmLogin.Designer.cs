@@ -37,10 +37,6 @@
             SuspendLayout();
             // 
             // txtUser
-            // 
-            txtUser.Location = new Point(12, 87);
-            txtUser.Name = "txtUser";
-            txtUser.Size = new Size(285, 23);
             txtUser.TabIndex = 0;
             // 
             // txtSenha
