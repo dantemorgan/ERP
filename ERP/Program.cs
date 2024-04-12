@@ -1,4 +1,6 @@
 using ERP.Forms;
+using ERP.Services;
+using System.Data.SqlClient;
 
 namespace ERP
 {
@@ -10,10 +12,11 @@ namespace ERP
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            
             ApplicationConfiguration.Initialize();
+            
             Application.Run(new frmLogin());
+
         }
     }
 }

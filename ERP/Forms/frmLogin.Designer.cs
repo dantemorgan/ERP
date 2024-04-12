@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtUser = new TextBox();
             txtSenha = new TextBox();
             lblUser = new Label();
             lblSenha = new Label();
             btnEntrar = new Button();
             btnSair = new Button();
+            cboUser = new ComboBox();
             SuspendLayout();
-            // 
-            // txtUser
-            txtUser.TabIndex = 0;
             // 
             // txtSenha
             // 
@@ -84,30 +81,39 @@
             btnSair.UseVisualStyleBackColor = true;
             btnSair.Click += btnSair_Click;
             // 
+            // cboUser
+            // 
+            cboUser.FormattingEnabled = true;
+            cboUser.Location = new Point(12, 91);
+            cboUser.Name = "cboUser";
+            cboUser.Size = new Size(285, 23);
+            cboUser.TabIndex = 6;
+            cboUser.Text = "Usuário";
+            // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(327, 222);
+            Controls.Add(cboUser);
             Controls.Add(btnSair);
             Controls.Add(btnEntrar);
             Controls.Add(lblSenha);
             Controls.Add(lblUser);
             Controls.Add(txtSenha);
-            Controls.Add(txtUser);
             Name = "frmLogin";
             Text = "frmLogin";
+            Load += frmLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox txtUser;
         private TextBox txtSenha;
         private Label lblUser;
         private Label lblSenha;
         private Button btnEntrar;
         private Button btnSair;
+        private ComboBox cboUser;
     }
 }
