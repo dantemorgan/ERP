@@ -66,6 +66,23 @@ namespace ERP.Services
             }
         }
 
+        public void ExecutarNonQuery(string query)
+        {
+            try
+            {
+                SqlConnection conexao = AbrirConexao();
+                SqlCommand comando = new SqlCommand(query, conexao);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao realizar consulta!" + ex.Message, "Erro!");
+               
+            }
+        }
+
+
+
     }
 
 

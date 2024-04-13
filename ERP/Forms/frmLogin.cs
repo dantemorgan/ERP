@@ -20,16 +20,12 @@ namespace ERP.Forms
             InitializeComponent();
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            
-            PopulaComboUsuarios();
 
+            PopulaComboUsuarios();
 
         }
 
@@ -40,32 +36,49 @@ namespace ERP.Forms
 
             List<Usuario> users = Usuario.ConsultaUsuarios(conexaoBanco);
 
-            foreach (Usuario usuario in users)
-            {
-                cboUser.Items.Add(usuario);
-            }
+            cboUser.DataSource = users;
 
             cboUser.ValueMember = "codigo";
             cboUser.DisplayMember = "nome";
             cboUser.SelectedIndex = 0;
+
         }
 
-        private bool VerificaSenhaUsuario(ConexaoBD conexao ,double codUsuario)
-        {
 
-            Usuario usuario = Usuario.ConsultaUsuarioPorCodigo(conexao, codUsuario);
-            if (usuario != null) 
-            { 
-                if(usuario.senha == txtSenha.Text)
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            if (txtSenha.Text == "")
+            {
+                MessageBox.Show("Digite a senha!", "Aviso");
+                txtSenha.Focus();
+
+            }
+            else
+            {
+                ConexaoBD conexaoBanco = new ConexaoBD("(local)", "ERP", "sa", "280612");
+                conexaoBanco.AbrirConexao();
+                if (Usuario.VerificaSenhaUsuario(conexaoBanco, (double)cboUser.SelectedValue, txtSenha.Text))
+
                 {
-                    MessageBox.Show("Senha correta!", "Aviso");
-                }
-                else
-                {
-                    MessageBox.Show("Senha incorreta!", "Aviso");
+                    this.Hide();
+                    frmPrincipal Form = new frmPrincipal();
+                    //Form.FormClosed += (s, args)  => this.Close();
+                    Form.Show();
+
+
+
                 }
             }
-            return false;
+
+
+        }
+
+
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

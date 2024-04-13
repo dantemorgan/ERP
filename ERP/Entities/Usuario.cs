@@ -18,7 +18,7 @@ namespace ERP.Entities
 
         public Usuario() { }
 
-        public Usuario(float codigo, string nome, string senha)
+        public Usuario(double codigo, string nome, string senha)
         {
             this.codigo = codigo;
             this.nome = nome;
@@ -29,7 +29,7 @@ namespace ERP.Entities
         {
 
             List<Usuario> usuarios = new List<Usuario>();
-            string sql = "SELECT CODIGO, NOME, SENHA FROM USUARIO";
+            string sql = "SELECT CODIGO, NOME, SENHA FROM USUARIO ORDER BY NOME ASC";
             var dr = conexao.ExecutarConsulta(sql);
 
             if (dr != null)
@@ -54,10 +54,10 @@ namespace ERP.Entities
         {
             try
             {
-                string sql = "SELECT CODIGO, NOME, SENHA FROM USUARIO WHERE CODIGO =" + codUsuario.ToString();
+                string sql = "SELECT CODIGO, NOME, SENHA FROM USUARIO WHERE CODIGO = " + codUsuario.ToString();
                 Usuario user = new Usuario();
                 var dr = conexao.ExecutarConsulta(sql);
-                if (dr != null)
+                if (dr.Read())
                 {
 
                     user.codigo = Convert.ToDouble(dr["codigo"]);
@@ -78,6 +78,25 @@ namespace ERP.Entities
             }
             
 
+        }
+
+
+        public static bool VerificaSenhaUsuario(ConexaoBD conexao, double codUsuario, string senhaDigitada)
+        {
+
+            Usuario usuario = Usuario.ConsultaUsuarioPorCodigo(conexao, codUsuario);
+            if (usuario != null)
+            {
+                if (usuario.senha == senhaDigitada)
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Senha incorreta!", "Aviso");
+                }
+            }
+            return false;
         }
 
 

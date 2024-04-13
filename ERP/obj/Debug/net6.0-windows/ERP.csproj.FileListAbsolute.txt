@@ -22,3 +22,6 @@ D:\ProjetosGit\ERP\ERP\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
 D:\ProjetosGit\ERP\ERP\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\ProjetosGit\ERP\ERP\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.csproj.CopyComplete
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.Forms.frmPrincipal.resources
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.Properties.Resources.resources
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.Forms.Clientes.frmClientes.resources

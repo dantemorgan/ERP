@@ -16,6 +16,7 @@ namespace ERP
             ApplicationConfiguration.Initialize();
             
             Application.Run(new frmLogin());
+            
 
         }
     }
