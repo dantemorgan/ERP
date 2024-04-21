@@ -63,5 +63,56 @@ namespace ERP.Forms.Clientes
             grdClientes.Columns[((int)ColClientes.Nome)].Width = (int)(grdClientes.Width * 0.4);
             grdClientes.Columns[((int)ColClientes.Telefone)].Width = (int)(grdClientes.Width * 0.3);
         }
+
+        private void btnNovoCliente_Click(object sender, EventArgs e)
+        {
+            frmCadCliente frm = Application.OpenForms["frmCadCliente"] as frmCadCliente;
+
+            if (frm == null)
+            {
+                // Se não houver uma instância aberta, cria uma nova
+                frm = new frmCadCliente();
+                frm.PopulaComboUFs();
+                frm.Show();
+            }
+            else
+            {
+                // Se já houver uma instância aberta, apenas traz ela para foco
+                frm.Focus();
+            }
+        }
+
+        private void grdClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void grdClientes_DoubleClick(object sender, EventArgs e)
+        {
+            int rowIndex = grdClientes.SelectedCells[0].RowIndex;
+            int codigo = (int)grdClientes.Rows[rowIndex].Cells[(int)ColClientes.Codigo].Value;
+
+            Cliente clienteParaAbrir = Cliente.ConsultaClientePorCodigo(conexaoBanco, codigo);
+
+            frmCadCliente frm = Application.OpenForms["frmCadCliente"] as frmCadCliente;
+
+            if (frm == null)
+            {
+                // Se não houver uma instância aberta, cria uma nova
+                frm = new frmCadCliente();
+                
+                frm.CarregarClienteDoGrid(clienteParaAbrir);
+                
+
+                frm.Show();
+            }
+            else
+            {
+                // Se já houver uma instância aberta, apenas traz ela para foco
+                frm.Focus();
+            }
+
+
+        }
     }
 }

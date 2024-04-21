@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,7 +69,7 @@ namespace ERP.Entities
             return clientes;
         }
 
-        public static Cliente ConsultaClientePorCOdigo(ConexaoBD conexao, int codCliente)
+        public static Cliente ConsultaClientePorCodigo(ConexaoBD conexao, int codCliente)
         {
             Cliente cliente = new Cliente();
             string sql = "SELECT codigo, nome, codigoUF, cidade,bairro, logradouro,numero,cpfCnpj, telefone from clientes where codigo = " + codCliente;
@@ -94,9 +95,85 @@ namespace ERP.Entities
             return cliente;
         }
 
-        public void InserirCliente(ConexaoBD conexao, Cliente cliente)
+        public static bool InserirCliente(ConexaoBD conexao, Cliente cliente)
         {
-            //conexao.ExecutarConsulta;
+            
+            try
+            {
+                string sql = "INSERT INTO CLIENTES (" + Environment.NewLine; 
+                sql += "Nome,CodigoUF,Cidade,bairro,logradouro,numero,cpfCnpj,telefone)" + Environment.NewLine;
+                sql += "VALUES(" + Environment.NewLine;
+                sql += "'" + cliente.nome + "'" + Environment.NewLine;
+                sql += "," + cliente.codigoUF + Environment.NewLine;
+                sql += ", '" + cliente.cidade + "'" + Environment.NewLine;
+                sql += ", '" + cliente.bairro + "'" + Environment.NewLine;
+                sql += ", '" + cliente.logradouro + "'" + Environment.NewLine;
+                sql += ", " + cliente.numero + Environment.NewLine;
+                sql += ", '" + cliente.cpfCnpj + "'" + Environment.NewLine;
+                sql += ", '" + cliente.telefone + "'" + Environment.NewLine;
+                sql += ")";
+                conexao.ExecutarNonQuery(sql);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            
+
+        }
+
+        public static int BuscaUltimoCodigo(ConexaoBD conexao)
+        {
+            string sql;
+            sql = "SELECT top 1 codigo from clientes order by codigo desc";
+            int ultimoCodigo = 0;
+
+            var dr = conexao.ExecutarConsulta(sql);
+
+            if (dr !=null)
+            {
+                if (dr.Read())
+                {
+                    ultimoCodigo = (int)dr["codigo"];
+                    dr.Close();
+                }
+            }
+            
+            return ultimoCodigo;
+        }
+
+        public static bool AlteraCliente(ConexaoBD conexao, Cliente cliente)
+        {
+            string sql;
+
+            sql = "UPDATE CLIENTES SET " + Environment.NewLine;
+            sql += "Nome = '" + cliente.nome.ToString() + "'" + Environment.NewLine; ;
+            sql += ", CodigoUF = " + cliente.codigoUF.ToString() + Environment.NewLine; ;
+            sql += ", Cidade = '" + cliente.cidade.ToString() + "'" + Environment.NewLine; ;
+            sql += ", bairro = '" + cliente.bairro.ToString() + "'" + Environment.NewLine; ;
+            sql += ", logradouro = '" + cliente.logradouro.ToString() + "'" + Environment.NewLine; ;
+            sql += ", numero  = " + cliente.numero.ToString() + Environment.NewLine; ;
+            sql += ", cpfCnpj = '" + cliente.cpfCnpj.ToString() + "'" + Environment.NewLine; ;
+            sql += ", telefone = '" + cliente.telefone.ToString() + "'" + Environment.NewLine; ;
+            sql += " WHERE CODIGO = " + cliente.codigo.ToString();
+
+            conexao.ExecutarNonQuery(sql);
+
+            return true;
+        }
+
+        public static bool ExcluirCliente(ConexaoBD conexao, int codCliente)
+        {
+            string sql;
+            if(ClienteImagem.ExcluiImagemCliente(conexao, codCliente))
+            {
+                sql = "DELETE FROM CLIENTES WHERE CODIGO = " + codCliente;
+                conexao.ExecutarNonQuery(sql);
+                return true;
+            }
+            
+            return false;
         }
     }
 }

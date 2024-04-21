@@ -33,6 +33,7 @@
             Codigo = new DataGridViewTextBoxColumn();
             Nome = new DataGridViewTextBoxColumn();
             Telefone = new DataGridViewTextBoxColumn();
+            btnNovoCliente = new Button();
             ((System.ComponentModel.ISupportInitialize)grdClientes).BeginInit();
             SuspendLayout();
             // 
@@ -43,8 +44,10 @@
             grdClientes.Location = new Point(12, 12);
             grdClientes.Name = "grdClientes";
             grdClientes.RowTemplate.Height = 25;
-            grdClientes.Size = new Size(526, 503);
+            grdClientes.Size = new Size(526, 522);
             grdClientes.TabIndex = 0;
+            grdClientes.CellContentClick += grdClientes_CellContentClick;
+            grdClientes.DoubleClick += grdClientes_DoubleClick;
             // 
             // Codigo
             // 
@@ -64,11 +67,24 @@
             Telefone.Name = "Telefone";
             Telefone.ReadOnly = true;
             // 
+            // btnNovoCliente
+            // 
+            btnNovoCliente.Image = (Image)resources.GetObject("btnNovoCliente.Image");
+            btnNovoCliente.Location = new Point(423, 540);
+            btnNovoCliente.Name = "btnNovoCliente";
+            btnNovoCliente.Size = new Size(115, 65);
+            btnNovoCliente.TabIndex = 1;
+            btnNovoCliente.Text = "Novo";
+            btnNovoCliente.TextAlign = ContentAlignment.BottomCenter;
+            btnNovoCliente.UseVisualStyleBackColor = true;
+            btnNovoCliente.Click += btnNovoCliente_Click;
+            // 
             // frmClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(550, 617);
+            Controls.Add(btnNovoCliente);
             Controls.Add(grdClientes);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmClientes";
@@ -84,5 +100,6 @@
         private DataGridViewTextBoxColumn Codigo;
         private DataGridViewTextBoxColumn Nome;
         private DataGridViewTextBoxColumn Telefone;
+        private Button btnNovoCliente;
     }
 }
