@@ -28,3 +28,4 @@ D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.Forms.Clientes.frmCadCliente
 D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.Forms.Produtos.Produtos.resources
 D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.sourcelink.json
 D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.csproj.Up2Date
+D:\ProjetosGit\ERP\ERP\obj\Debug\net6.0-windows\ERP.Forms.Relatórios.FrmRelatorios.resources

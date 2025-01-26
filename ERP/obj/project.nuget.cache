@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QdS/iWMwv8q8VQRFYK/FXfZQR3Op2pp2hQKEiRWWUwVq8COxFDku5KJ6dHmkhGe6WOx7eSSzfnhAsW6bZv3wQQ==",
+  "dgSpecHash": "8B8GxE8y3WQ=",
   "success": true,
   "projectFilePath": "D:\\ProjetosGit\\ERP\\ERP\\ERP.csproj",
   "expectedPackageFiles": [
@@ -12,11 +12,7 @@
     "C:\\Users\\marcu\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\marcu\\.nuget\\packages\\system.data.sqlclient\\4.8.6\\system.data.sqlclient.4.8.6.nupkg.sha512",
     "C:\\Users\\marcu\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\marcu\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.30\\microsoft.windowsdesktop.app.ref.6.0.30.nupkg.sha512",
-    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.30\\microsoft.netcore.app.ref.6.0.30.nupkg.sha512",
-    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.30\\microsoft.aspnetcore.app.ref.6.0.30.nupkg.sha512",
-    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.30\\microsoft.netcore.app.host.win-x64.6.0.30.nupkg.sha512"
+    "C:\\Users\\marcu\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

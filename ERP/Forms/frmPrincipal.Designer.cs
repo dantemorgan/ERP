@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             fraPrincipal = new Panel();
+            btnRelatorios = new Button();
             btnPedidos = new Button();
             btnLogOut = new Button();
             btnUsuarios = new Button();
@@ -41,6 +42,7 @@
             // 
             // fraPrincipal
             // 
+            fraPrincipal.Controls.Add(btnRelatorios);
             fraPrincipal.Controls.Add(btnPedidos);
             fraPrincipal.Controls.Add(btnLogOut);
             fraPrincipal.Controls.Add(btnUsuarios);
@@ -52,6 +54,18 @@
             fraPrincipal.Size = new Size(424, 555);
             fraPrincipal.TabIndex = 0;
             // 
+            // btnRelatorios
+            // 
+            btnRelatorios.Image = (Image)resources.GetObject("btnRelatorios.Image");
+            btnRelatorios.Location = new Point(108, 83);
+            btnRelatorios.Name = "btnRelatorios";
+            btnRelatorios.Size = new Size(99, 67);
+            btnRelatorios.TabIndex = 6;
+            btnRelatorios.Text = "Relatórios";
+            btnRelatorios.TextAlign = ContentAlignment.BottomCenter;
+            btnRelatorios.UseVisualStyleBackColor = true;
+            btnRelatorios.Click += btnRelatorios_Click;
+            // 
             // btnPedidos
             // 
             btnPedidos.Image = (Image)resources.GetObject("btnPedidos.Image");
@@ -62,6 +76,7 @@
             btnPedidos.Text = "Pedidos";
             btnPedidos.TextAlign = ContentAlignment.BottomCenter;
             btnPedidos.UseVisualStyleBackColor = true;
+            btnPedidos.Click += btnPedidos_Click;
             // 
             // btnLogOut
             // 
@@ -96,6 +111,7 @@
             btnProdutos.Text = "Produtos";
             btnProdutos.TextAlign = ContentAlignment.BottomCenter;
             btnProdutos.UseVisualStyleBackColor = true;
+            btnProdutos.Click += btnProdutos_Click;
             // 
             // btnFornecedores
             // 
@@ -142,5 +158,6 @@
         private Button btnFornecedores;
         private Button btnClientes;
         private Button btnPedidos;
+        private Button btnRelatorios;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ERP.Forms.Clientes;
+using ERP.Forms.Relatórios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +39,22 @@ namespace ERP.Forms
         {
             frmClientes form = new frmClientes();
             form.Show();
+        }
+
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRelatorios_Click(object sender, EventArgs e)
+        {
+            FrmRelatorios form = new FrmRelatorios();
+            form.Show();
+        }
+
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
